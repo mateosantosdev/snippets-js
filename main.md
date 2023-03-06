@@ -15,3 +15,11 @@
 
 ### Create a new object with a dynamic key and value:
 `{ [key]: value }`
+
+### Mock window.location in unit tests
+```
+beforeEach(() => {
+ const urlparams = `firstparam=thisismyfirstparamvalue`;
+ window.history.pushState({}, 'Page title while testing', `/myurl/with/params?${search}`);
+});
+```
